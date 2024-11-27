@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8"> <!-- Para mostrar caracteres especiales -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Diseño responsive -->
+    <link rel="stylesheet" href="banderas.css"> <!-- Archivo de estilos -->
+    <link rel="icon" href="icono/icono.ico" type="image/x-icon"> <!-- Favicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"> <!-- Tipografía -->
+    <meta name="author" content="Felipe Baudino">
+    <meta name="description" content="Un divertido juego quiz de banderas donde puedes poner a prueba tus conocimientos sobre las banderas de los países del mundo.">
+    <meta name="keywords" content="juego, quiz, banderas, Preguntados, países, trivia, geografía, conocimiento">
+    <title>BANDERAS QUIZ</title>
+</head>
+<body>
+<header><h1>BANDERAS QUIZ</h1></header>
+
+<main class="main">
+    <!-- PANTALLA INICIAL -->
+    <section class="section-1">
+        <canvas id="mi-canvas"></canvas>
+        <div id="pantalla-inicial">
+            <p>¿A qué país pertenece la bandera?</p>
+            <!-- Llamada al módulo para iniciar el juego -->
+            <button class="btn" onclick="JuegoBanderas.comenzarJuego()">JUGAR</button>
+        </div>
+    </section>
+
+    <!-- PANTALLA JUEGO -->
+    <section>
+        <div class="pantalla-juego" id="pantalla-juego">
+            <img src="" id="imgBandera" alt="bandera">
+            <div class="opciones">
+                <div class="opcion" id="op0" onclick="JuegoBanderas.comprobarRespuesta(0)">
+                    <div class="letra" id="l0">A</div>
+                    <div class="nombre" id="n0">OPCIÓN A</div>
+                </div>
+                <div class="opcion" id="op1" onclick="JuegoBanderas.comprobarRespuesta(1)">
+                    <div class="letra" id="l1">B</div>
+                    <div class="nombre" id="n1">OPCIÓN B</div>
+                </div>
+                <div class="opcion" id="op2" onclick="JuegoBanderas.comprobarRespuesta(2)">
+                    <div class="letra" id="l2">C</div>
+                    <div class="nombre" id="n2">OPCIÓN C</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PANTALLA FINAL -->
+    <section>
+        <div id="pantalla-final">
+            <h2>CORRECTAS: <span id="numCorrectas">3</span></h2>
+            <h2>INCORRECTAS: <span id="numIncorrectas">2</span></h2>
+            <!-- Llamada al módulo para volver al inicio -->
+            <button class="btn" onclick="JuegoBanderas.volverAlInicio()">Volver al inicio</button>
+        </div>
+    </section>
+
+</main>
+
+<footer>Autor: Felipe Baudino</footer>
+
+<!-- Asegurar que el script carga después del DOM -->
+<script src="banderas.js" defer></script>
+</body>
+</html>
